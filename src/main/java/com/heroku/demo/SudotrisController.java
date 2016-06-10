@@ -68,7 +68,7 @@ public class SudotrisController {
 */
 
 
-        Score score = new Score(env.getProperty("i.name"), Integer.getInteger(env.getProperty("i.time")));
+        Score score = new Score(env.getProperty("1.name"), env.getProperty("1.time"));
 
         return score;
 

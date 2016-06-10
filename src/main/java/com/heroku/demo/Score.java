@@ -8,7 +8,7 @@ public class Score {
         return name;
     }
 
-    public Score(String name, int time) {
+    public Score(String name, String time) {
         this.name = name;
         this.time = time;
     }
@@ -17,14 +17,14 @@ public class Score {
         this.name = name;
     }
 
-    public int getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
     String name;
-    int time;
+    String time;
 }
