@@ -55,10 +55,29 @@ public class SudotrisController {
 
 
     @RequestMapping(value = "/enregistrerScore/{score}/{name}", method = RequestMethod.GET)
-    public List<Score> foo(@PathVariable("score") String score, @PathVariable("name") String name) throws IOException {
+    public List<Score> foo(@PathVariable("score") int score, @PathVariable("name") String name) throws IOException {
         List<Score> listeScore = new ArrayList<Score>();
 
-        for (int i = 1 ; i < 4 ; i++ )
+        int rang = 6;
+        for (int i = 1 ; i <= 5 ; i++ )
+        {
+            if (Integer.getInteger(env.getProperty(i + ".name")) > score)
+            {
+                rang = i;
+            }
+        }
+        System.setProperty("5.name",  "foooooooo");
+/*
+        if (rang < 6)
+        {
+            for (int i = 5 ; i >= rang ; i-- )
+            {
+                System.setProperty(i + ".name",  env.getProperty(i + ".time"));
+                env.getProperty(i + ".time");
+            }
+        }
+*/
+        for (int i = 1 ; i <= 5 ; i++ )
         {
             listeScore.add(new Score(env.getProperty(i + ".name"), env.getProperty(i + ".time")));
         }
