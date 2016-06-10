@@ -66,17 +66,9 @@ public class SudotrisController {
                 rang = i;
             }
         }
-        System.setProperty("5.name",  "foooooooo");
-/*
-        if (rang < 6)
-        {
-            for (int i = 5 ; i >= rang ; i-- )
-            {
-                System.setProperty(i + ".name",  env.getProperty(i + ".time"));
-                env.getProperty(i + ".time");
-            }
-        }
-*/
+        List<String> lines = Arrays.asList("The first line", "The second line");
+        Path file = Paths.get("score.txt");
+        Files.write(file, lines, Charset.forName("UTF-8"));
         for (int i = 1 ; i <= 5 ; i++ )
         {
             listeScore.add(new Score(env.getProperty(i + ".name"), env.getProperty(i + ".time")));
