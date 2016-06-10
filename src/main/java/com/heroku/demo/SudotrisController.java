@@ -65,9 +65,9 @@ public class SudotrisController {
             {
                 rang = i;
             }
-        }/*
+        }
         System.setProperty("5.name",  "foooooooo");
-
+/*
         if (rang < 6)
         {
             for (int i = 5 ; i >= rang ; i-- )
