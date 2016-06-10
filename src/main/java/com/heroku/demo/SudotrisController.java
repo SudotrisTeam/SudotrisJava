@@ -40,7 +40,7 @@ import org.springframework.core.env.Environment;
 
 @RequestMapping("/sudotris")
 @RestController
-@PropertySource("classpath:config.properties")
+@PropertySource("classpath:score.properties")
 public class SudotrisController {
 
 
@@ -69,7 +69,7 @@ public class SudotrisController {
 */
 
         String foo = env.getProperty("score.test");
-        
+
         return foo;
 
     }
