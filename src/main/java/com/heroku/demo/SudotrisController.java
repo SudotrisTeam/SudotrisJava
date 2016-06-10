@@ -55,6 +55,7 @@ public class SudotrisController {
 
 
     @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
+    @ResponseBody
     public Score foo(@PathVariable("difficulte") int difficulte) throws IOException {
 /*
         String FILE_NAME = "score.txt";
