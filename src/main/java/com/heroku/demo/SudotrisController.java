@@ -54,7 +54,7 @@ public class SudotrisController {
     }
 
 
-    @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
+    @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
     public String foo(@PathVariable("difficulte") int difficulte) {
 /*
         String FILE_NAME = "score.txt";
