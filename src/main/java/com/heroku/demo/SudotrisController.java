@@ -54,7 +54,7 @@ public class SudotrisController {
     }
 
 
-    @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
+    @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET, produces="application/json")
     @ResponseBody
     public Score foo(@PathVariable("difficulte") int difficulte) throws IOException {
 /*
@@ -71,7 +71,6 @@ public class SudotrisController {
 
      //   Score score = new Score(env.getProperty("1.name"), env.getProperty("1.time"));
         Score score = new Score("e", "r");
-
         return score;
 
     }
