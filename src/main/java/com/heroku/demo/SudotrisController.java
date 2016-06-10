@@ -55,7 +55,7 @@ public class SudotrisController {
 
 
     @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
-    public String foo(@PathVariable("difficulte") int difficulte) {
+    public Score foo(@PathVariable("difficulte") int difficulte) {
 /*
         String FILE_NAME = "score.txt";
         String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
@@ -68,8 +68,9 @@ public class SudotrisController {
 */
 
 
-     //   Score score = new Score(env.getProperty("1.name"), env.getProperty("1.time"));
-        return "{  \"response\" : \"your string value\" }";
+       Score score = new Score(env.getProperty("1.name"), env.getProperty("1.time"));
+        // return "{  \"response\" : \"your string value\" }";
+        return score;
 
     }
 
