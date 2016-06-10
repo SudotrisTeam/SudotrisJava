@@ -52,7 +52,7 @@ public class SudotrisController {
     @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
     public String foo(@PathVariable("difficulte") int difficulte) throws IOException {
 
-        String FILE_NAME = "score.txt";
+        String FILE_NAME = "./score.txt";
         String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
         Charset ENCODING = StandardCharsets.UTF_8;
             //treat as a small file
