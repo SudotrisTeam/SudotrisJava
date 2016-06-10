@@ -23,8 +23,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -35,7 +34,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
+
 import org.springframework.core.env.Environment;
 
 @RequestMapping("/sudotris")
@@ -55,8 +54,8 @@ public class SudotrisController {
     }
 
 
-    @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
-    public String foo(@PathVariable("difficulte") int difficulte) throws IOException {
+    @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
+    public List<List<String>> foo(@PathVariable("difficulte") int difficulte) throws IOException {
 /*
         String FILE_NAME = "score.txt";
         String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
@@ -68,9 +67,16 @@ public class SudotrisController {
             lines.add("This is a line added in code.");
 */
 
-        String foo = env.getProperty("score.test");
+        List<List<String>> listeScore = new ArrayList<>();
+        for (int i = 1 ; i < 5 ; i++ )
+        {
+            List<String> score = new ArrayList<>();
+            score.add(env.getProperty("i.name"));
+            score.add(env.getProperty("i.time"));
+            listeScore.add(score);
+        }
 
-        return foo;
+        return listeScore;
 
     }
 
