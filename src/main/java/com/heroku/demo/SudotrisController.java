@@ -67,7 +67,8 @@ public class SudotrisController {
             lines.add("This is a line added in code.");
 */
 
-        List<List<String>> listeScore = new ArrayList<>();
+        List<List<String>> listeScore = new ArrayList<List<String>>();
+        /*
         for (int i = 1 ; i < 5 ; i++ )
         {
             List<String> score = new ArrayList<>();
@@ -75,7 +76,7 @@ public class SudotrisController {
             score.add(env.getProperty("i.time"));
             listeScore.add(score);
         }
-
+*/
         return listeScore;
 
     }
