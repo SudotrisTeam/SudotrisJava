@@ -54,7 +54,7 @@ public class SudotrisController {
     }
 
 
-    @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
+    @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
     public List<Score> foo(@PathVariable("difficulte") int difficulte) throws IOException {
         List<Score> listeScore = new ArrayList<Score>();
 
