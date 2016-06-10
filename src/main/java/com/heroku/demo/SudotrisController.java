@@ -54,23 +54,16 @@ public class SudotrisController {
     }
 
 
-    @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
-    public Score foo(@PathVariable("difficulte") int difficulte) {
-/*
-        String FILE_NAME = "score.txt";
-        String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
-        Charset ENCODING = StandardCharsets.UTF_8;
-            //treat as a small file
-            List<String> lines;
-            Path path = Paths.get(FILE_NAME);
-            lines = Files.readAllLines(path, ENCODING);
-            lines.add("This is a line added in code.");
-*/
+    @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
+    public List<Score> foo(@PathVariable("difficulte") int difficulte) throws IOException {
+        List<Score> listeScore = new ArrayList<Score>();
 
+        for (int i = 1 ; i < 4 ; i++ )
+        {
+            listeScore.add(new Score(env.getProperty(i + ".name"), env.getProperty(i + ".time")));
+        }
 
-       Score score = new Score(env.getProperty("1.name"), env.getProperty("1.time"));
-        // return "{  \"response\" : \"your string value\" }";
-        return score;
+        return listeScore;
 
     }
 
