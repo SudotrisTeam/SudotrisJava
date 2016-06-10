@@ -22,7 +22,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Arrays;
 import java.util.List;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
 
 @RequestMapping("/sudotris")
 @RestController
@@ -37,24 +49,23 @@ public class SudotrisController {
     }
 
 
-    @RequestMapping(value = "/fooTest", method = RequestMethod.GET)
-    public String foo() {
+    @RequestMapping(value = "/enregistrerScore/{difficulte}", method = RequestMethod.GET)
+    public String foo(@PathVariable("difficulte") int difficulte) throws IOException {
+
+        String FILE_NAME = "score.txt";
+        String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
+        Charset ENCODING = StandardCharsets.UTF_8;
+            //treat as a small file
+            List<String> lines;
+            Path path = Paths.get(FILE_NAME);
+            lines = Files.readAllLines(path, ENCODING);
+            lines.add("This is a line added in code.");
+
+
         return "foo";
+
     }
 
-    @RequestMapping(value = "/foooTest", method = RequestMethod.GET)
-    public String fooo() {
-        return "foo";
-    }
-
-    @RequestMapping("/greeting")
-    public String greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return name;
-    }
-    @RequestMapping(value = "/id/{id}/mock", method = RequestMethod.GET)
-    public String mock(@PathVariable("id") int id) {
-        return "foo";
-    }
     @RequestMapping(value = "/id/{id}/reel", method = RequestMethod.GET)
     public int reel(@PathVariable("id") int id) {
         return id;
