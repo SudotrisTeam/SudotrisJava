@@ -55,7 +55,7 @@ public class SudotrisController {
 
 
     @RequestMapping(value = "/enregistrerScore/{name}/{score}", method = RequestMethod.GET)
-    public List<List<String>> foo(@PathVariable("difficulte") int difficulte) throws IOException {
+    public Score foo(@PathVariable("difficulte") int difficulte) throws IOException {
 /*
         String FILE_NAME = "score.txt";
         String OUTPUT_FILE_NAME = "C:\\Temp\\output.txt";
@@ -67,17 +67,10 @@ public class SudotrisController {
             lines.add("This is a line added in code.");
 */
 
-        List<List<String>> listeScore = new ArrayList<List<String>>();
-        /*
-        for (int i = 1 ; i < 5 ; i++ )
-        {
-            List<String> score = new ArrayList<>();
-            score.add(env.getProperty("i.name"));
-            score.add(env.getProperty("i.time"));
-            listeScore.add(score);
-        }
-*/
-        return listeScore;
+
+        Score score = new Score(env.getProperty("i.name"), Integer.getInteger(env.getProperty("i.time")));
+
+        return score;
 
     }
 
